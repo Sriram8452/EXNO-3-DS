@@ -133,8 +133,65 @@ np.log(df["Highly Positive Skew"])
 ![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/a1b09b3f-7c36-43e4-9d96-384cb9d43f2f)
 
 ```
+np.reciprocal(df["Moderate Positive Skew"])
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/c7756850-3bbe-48df-b7e7-a32dd03c047b)
+
+```
+np.sqrt(df["Highly Positive Skew"])
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/2672f5e0-c4f1-4e2c-a823-cf537c35fdeb)
+
+```
+np.square(df["Highly Positive Skew"])
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/1f76af93-f42d-4368-8197-9a1f5a9a9cfd)
+
+```
+df["Highly Positive Skew_boxcox"],parameters=stats.boxcox(df["Highly Positive Skew"])
+df
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/b8b2b111-b9ac-4216-8e7e-c6d2b4a0ddbc)
+
+```
+df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"])
+df.skew()
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/f3c7a9fa-369c-420c-b65a-ffc9e74f2175)
+
+```
+df["Highly Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Highly Negative Skew"])
+df.skew()
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/185a64c7-cfc9-40ef-9e00-e910519458a9)
+
+# 8.Graphical Visualization:
+```
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.api as sm
+import scipy.stats as stats
+sm.qqplot(df["Moderate Negative Skew"],line='45')
+plt.show()
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/0dff9075-c794-4fed-b270-49f30ba20341)
+
+```
+sm.qqplot(np.reciprocal(df["Moderate Negative Skew"]),line='45')
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/ec3a9a35-4e06-4ebc-9169-43590015fe02)
+
+```
+from sklearn.preprocessing import QuantileTransformer
+qt=QuantileTransformer(output_distribution='normal',n_quantiles=891)
+df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
+sm.qqplot(df["Moderate Negative Skew"],line='45')
+plt.show()
+```
+![image](https://github.com/Sriram8452/EXNO-3-DS/assets/118708032/ad8ef943-9088-4035-9f66-4eb6a8b1d145)
 
 # RESULT:
-       # INCLUDE YOUR RESULT HERE
+Thus the given data is read and  Feature Encoding and Transformation process is performed and save the data to a file.
+
 
        
