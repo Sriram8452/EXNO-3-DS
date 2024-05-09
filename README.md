@@ -1,4 +1,4 @@
-## EXNO-3-DS
+## EXNO3 Feature Encoding and Transformation 
 
 # AIM:
 To read the given data and perform Feature Encoding and Transformation process and save the data to a file.
@@ -31,6 +31,10 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
+
+Developed By: Sriram G
+
+Register Number: 212222230149 
 
 # 1.FEATURE ENCODING:
  
